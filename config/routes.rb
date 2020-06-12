@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get '/pages/:id' => 'pages#show', as: 'profile'
+
   get '/about' => 'pages#about', as: 'about'
-  
+
   get '/blog' => 'pages#blog', as: 'blog'
 
   get '/contact' => 'pages#contact', as: 'contact'
