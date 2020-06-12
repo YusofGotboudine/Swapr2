@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+<%= render 'layouts/navbar1' %>
+<% else %>
+<%= render 'layouts/navbar' %>
+<%end%>
+
+<p>
+  <strong>User:</strong>
+  <%= @offer.user_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @offer.product_id %>
+</p>
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>

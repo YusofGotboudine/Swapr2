@@ -1,2 +1,9 @@
+<% if user_signed_in? %>
+<%= render 'layouts/navbar1' %>
+<% else %>
 <%= render 'layouts/navbar' %>
+<%end%>
+
+<p id="notice"><%= notice %></p>
+
 <p>This is the About Page</p>

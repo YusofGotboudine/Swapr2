@@ -1,0 +1,13 @@
+<div>
+
+    <h3>Listings</h3>
+
+    <% @products.each do |product| %>
+
+        <p><%= product.name %> from <%= product.user.email %></p>
+        <p><%= image_tag (product.img_url), style: 'width: 200px; height: 170px' %></p>
+        <p><%= product.description %></p>
+        <p><%= link_to 'View', product_path(product) %></p>
+        <%end%>
+
+</div>
