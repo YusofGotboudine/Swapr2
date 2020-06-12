@@ -4,7 +4,15 @@ class PagesController < ApplicationController
   
   end
 
-  def show
+  def about
+   
+  end
+
+  def blog
+   
+  end
+
+  def contact
    
   end
 
