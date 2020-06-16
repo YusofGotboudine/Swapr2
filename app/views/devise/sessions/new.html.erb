@@ -1,3 +1,11 @@
+<% if user_signed_in? %>
+<%= render 'layouts/navbar1' %>
+<% else %>
+<%= render 'layouts/navbar' %>
+<%end%>
+
+<div class = 'mt-3', style = 'text-align:center;'>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +32,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>

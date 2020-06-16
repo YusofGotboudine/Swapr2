@@ -29,9 +29,10 @@
 
 <br/>
 <br/>
-<div>
+<div style = 'text-align: center;'>
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br/>
 <%= link_to 'Back', products_path %>
 </div>
 <% end %>

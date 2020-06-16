@@ -4,9 +4,12 @@
 <%= render 'layouts/navbar' %>
 <%end%>
 
-<h1>Editing Product</h1>
+<div style = "text-align:center;">
+
+<h1>Edit Product</h1>
 
 <%= render 'form', product: @product %>
 
 <%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back to all Listings', products_path %>
+</div>
