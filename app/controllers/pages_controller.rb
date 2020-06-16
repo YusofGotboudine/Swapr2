@@ -24,4 +24,8 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def chat
+    @user = current_user
+  end
+
 end

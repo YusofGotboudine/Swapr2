@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   get '/listings' => 'products#index', as: 'listings'
 
+  get '/chat' => 'pages#chat', as: 'message'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

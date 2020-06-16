@@ -4,8 +4,11 @@
 <%= render 'layouts/navbar' %>
 <%end%>
 
+<div style = "text-align:center;">
+
 <h1>New Offer</h1>
 
 <%= render 'form', offer: @offer %>
 
-<%= link_to 'Back', offers_path %>
+<%= link_to 'Back', listings_path %>
+</div>

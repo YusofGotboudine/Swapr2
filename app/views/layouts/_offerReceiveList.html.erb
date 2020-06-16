@@ -1,9 +1,9 @@
-<div>
+<div  style = 'text-align: center;'>
 
     <% @offers.each do |offer| %>
         
         <%if offer.product.user == current_user%>
-        <p><%= offer.user.email %> wants to trade their <%= offer.trade_item %> with your <%= offer.product.name %></p>
+        <p><%= offer.user.email %> wants to trade their <%= offer.trade_item %> with your <%= offer.product.name %> | <%= link_to 'Message', message_path %> </p>
         <%end%>
     <%end%>
 
