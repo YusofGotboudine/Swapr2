@@ -4,27 +4,36 @@
 <%= render 'layouts/navbar' %>
 <%end%>
 
-<p id="notice"><%= notice %></p>
+<p id="notice" class = "ml-5 mr-5"><%= notice %></p>
+
+<br/>
+
+<div class="container mr-5 ml-5">
+
+<h3 style="text-align:center;">Listing</h3>
 
 <%= render 'layouts/productDisplay'%>
 
+<br/>
 
 <% if current_user != @product.user %>
-
+<div style = 'text-align: center;'>
 <%= link_to 'Make a trade offer', new_offer_path(@product) %>
 
 <br/>
 <br/>
 
 <%= link_to 'Back', products_path %>
-
+</div>
 <% else %>
 
 <br/>
 <br/>
-
+<div>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', products_path %>
-
+</div>
 <% end %>
+
+</div>

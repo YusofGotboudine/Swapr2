@@ -1,9 +1,7 @@
-<div>
+<div style = 'text-align: center;'>
 
-    <h3>Product</h3>
-
-        <p><%= @product.name %> from <%= @product.user.email %></p>
-        <p><%= image_tag (@product.img_url), style: 'width: 200px; height: 170px' %></p>
-        <p><%= @product.description %></p>
+        <div class = 'mt-3 mb-3'><%= @product.name %> from <%= @product.user.email %></div>
+        <div><%= image_tag (@product.img_url), style: 'width: 400px; height: 340px' %></div>
+        <div class = 'mt-3 mb-3'><%= @product.description %></div>
 
 </div>
