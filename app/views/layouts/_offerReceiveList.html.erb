@@ -1,0 +1,10 @@
+<div>
+
+    <% @offers.each do |offer| %>
+        
+        <%if offer.product.user == current_user%>
+        <p><%= offer.user.email %> wants to trade their <%= offer.trade_item %> with your <%= offer.product.name %></p>
+        <%end%>
+    <%end%>
+
+</div>

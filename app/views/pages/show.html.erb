@@ -6,4 +6,42 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>This is the Profile Page</p>
+<br/>
+
+<% if @users == current_user %>
+    <p>Your profile </p>
+    <br/>
+    <p>Offers you've made</p>
+    <%= render 'layouts/offerMadeList' %>
+    <br/>
+    <p>Offers you've received</p>
+    <%= render 'layouts/offerReceiveList' %>
+
+<% else %>
+    <p><%= @users.email %>'s profile </p>
+    <br/>
+<% end %>
+
+<br/>
+
+<% if @users == current_user %>
+    <p>Your listings </p>
+<% else %>
+    <p><%= @users.email %>'s listings </p>
+<% end %>
+
+<div>
+
+    <% @products.each do |product| %>
+    
+        <p><%= product.name %></p>
+        <p><%= image_tag (product.img_url), style: 'width: 200px; height: 170px' %></p>
+        <p><%= product.description %></p>
+        <p><%= link_to 'View', product_path(product) %></p>
+        <%end%>
+
+</div>
+
+
+
+
