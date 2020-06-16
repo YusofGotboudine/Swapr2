@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @user = current_user
+
   end
 
   # GET /products/1/edit
@@ -33,6 +34,16 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.user = current_user
+
+    if params[:product][:img_url]
+    uploaded_file = params[:product][:img_url]
+    puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    puts uploaded_file
+    cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
+    puts cloudnary_file["url"]
+    @product.img_url = cloudnary_file["url"]
+    @product.save
+    end
 
     respond_to do |format|
       if @product.save
@@ -48,8 +59,18 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+
     respond_to do |format|
       if @product.update(product_params)
+        if params[:product][:img_url]
+          uploaded_file = params[:product][:img_url]
+          puts "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+          puts uploaded_file
+          cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
+          puts cloudnary_file["url"]
+          @product.img_url = cloudnary_file["url"]
+          @product.save
+          end
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else

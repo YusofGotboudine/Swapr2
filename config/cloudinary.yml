@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: yusofg
+  api_key: '241854451717959'
+  api_secret: B9OC2NQy-QUeEbzRojqYLiLT7ng
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: yusofg
+  api_key: '241854451717959'
+  api_secret: B9OC2NQy-QUeEbzRojqYLiLT7ng
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: yusofg
+  api_key: '241854451717959'
+  api_secret: B9OC2NQy-QUeEbzRojqYLiLT7ng
+  enhance_image_tag: true
+  static_file_support: false
