@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :trade_item %>
-    <%= form.text_field :trade_item %>
+    <%= form.select :trade_item, ['listed item','unlisted item'], :required => true %>
   </div>
 
   <div class="actions">
