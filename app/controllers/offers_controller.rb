@@ -4,27 +4,38 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
+    @user = current_user
     @offers = Offer.all
   end
 
   # GET /offers/1
   # GET /offers/1.json
   def show
+    @user = current_user
   end
 
   # GET /offers/new
   def new
+    @user = current_user
+    product_id = session[:product_id]
+    @product = Product.find(product_id)
     @offer = Offer.new
   end
 
   # GET /offers/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /offers
   # POST /offers.json
   def create
+    @user = current_user
+    product_id = session[:product_id]
+    @product = Product.find(product_id)
     @offer = Offer.new(offer_params)
+    @offer.user = current_user
+    @offer.product = @product
 
     respond_to do |format|
       if @offer.save
@@ -40,6 +51,7 @@ class OffersController < ApplicationController
   # PATCH/PUT /offers/1
   # PATCH/PUT /offers/1.json
   def update
+    @user = current_user
     respond_to do |format|
       if @offer.update(offer_params)
         format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
@@ -69,6 +81,6 @@ class OffersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def offer_params
-      params.require(:offer).permit(:user_id, :product_id)
+      params.require(:offer).permit(:user_id, :product_id, :trade_item)
     end
 end

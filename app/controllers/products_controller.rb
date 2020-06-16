@@ -14,21 +14,25 @@ class ProductsController < ApplicationController
   def show
     @users = User.all
     @user = current_user
+    session[:product_id] = @product.id
   end
 
   # GET /products/new
   def new
     @product = Product.new
+    @user = current_user
   end
 
   # GET /products/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
 
     respond_to do |format|
       if @product.save

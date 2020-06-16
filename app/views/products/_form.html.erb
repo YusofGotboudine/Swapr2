@@ -1,9 +1,3 @@
-<% if user_signed_in? %>
-<%= render 'layouts/navbar1' %>
-<% else %>
-<%= render 'layouts/navbar' %>
-<%end%>
-
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -30,11 +24,6 @@
   <div class="field">
     <%= form.label :img_url %>
     <%= form.text_area :img_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">

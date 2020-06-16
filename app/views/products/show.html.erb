@@ -8,10 +8,22 @@
 
 <%= render 'layouts/productDisplay'%>
 
-<%= link_to 'Make Offer', new_offer_path(@product) %>
+
+<% if current_user != @product.user %>
+<%= link_to 'Make a trade offer', new_offer_path(@product) %>
+
+<br/>
+<br/>
+
+<%= link_to 'Back', products_path %>
+
+<% else %>
 
 <br/>
 <br/>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', products_path %>
+
+<% end %>

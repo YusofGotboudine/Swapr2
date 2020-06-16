@@ -1,9 +1,3 @@
-<% if user_signed_in? %>
-<%= render 'layouts/navbar1' %>
-<% else %>
-<%= render 'layouts/navbar' %>
-<%end%>
-
 <%= form_with(model: offer, local: true) do |form| %>
   <% if offer.errors.any? %>
     <div id="error_explanation">
@@ -18,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id %>
+    <%= form.label :trade_item %>
+    <%= form.text_field :trade_item %>
   </div>
 
   <div class="actions">
