@@ -6,10 +6,21 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= render 'layouts/productList'%>
+<br/>
 
-<br>
+<h3>Listings</h3>
+
+<br/>
 
 <% if user_signed_in? %>
 <%= link_to 'New Product', new_product_path %>
 <% end %>
+
+<br/>
+<br/>
+
+<%= render 'layouts/productList'%>
+
+
+
+
