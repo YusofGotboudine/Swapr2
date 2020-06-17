@@ -3,16 +3,16 @@ class OffersController < ApplicationController
 
   # GET /offers
   # GET /offers.json
-  def index
-    @user = current_user
-    @offers = Offer.all
-  end
+  # def index
+  #   @user = current_user
+  #   @offers = Offer.all
+  # end
 
   # GET /offers/1
   # GET /offers/1.json
-  def show
-    @user = current_user
-  end
+  # def show
+  #   @user = current_user
+  # end
 
   # GET /offers/new
   def new
@@ -23,9 +23,9 @@ class OffersController < ApplicationController
   end
 
   # GET /offers/1/edit
-  def edit
-    @user = current_user
-  end
+  # def edit
+  #   @user = current_user
+  # end
 
   # POST /offers
   # POST /offers.json
@@ -50,18 +50,18 @@ class OffersController < ApplicationController
 
   # PATCH/PUT /offers/1
   # PATCH/PUT /offers/1.json
-  def update
-    @user = current_user
-    respond_to do |format|
-      if @offer.update(offer_params)
-        format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @offer }
-      else
-        format.html { render :edit }
-        format.json { render json: @offer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   @user = current_user
+  #   respond_to do |format|
+  #     if @offer.update(offer_params)
+  #       format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @offer }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @offer.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /offers/1
   # DELETE /offers/1.json

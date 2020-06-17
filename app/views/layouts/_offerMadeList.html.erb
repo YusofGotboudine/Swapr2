@@ -3,7 +3,7 @@
     <% @offers.each do |offer| %>
         
         <%if offer.user == current_user%>
-        <p><%= offer.product.name %> from <%= offer.product.user.email %> to exchange with your <%= offer.trade_item %></p>
+        <p><%= offer.product.name %> from <%= offer.product.user.email %> to exchange with your <%= offer.trade_item %> | <%= link_to 'Delete', offer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <%end%>
     <%end%>
 
