@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :offers
   resources :products
   devise_for :users
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about', as: 'about'
 
-  get '/blog' => 'pages#blog', as: 'blog'
+  get '/blog' => 'posts#index', as: 'blog'
 
   get '/contact' => 'pages#contact', as: 'contact'
 

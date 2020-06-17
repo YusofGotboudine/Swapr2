@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+<%= render 'layouts/navbar1' %>
+<% else %>
+<%= render 'layouts/navbar' %>
+<%end%>
+
+<h1>Editing Post</h1>
+
+<%= render 'form', post: @post %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>
